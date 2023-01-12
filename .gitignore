@@ -34,3 +34,6 @@ build/
 
 ### SQL Scripts ###
 sql-scripts
+
+mvnw
+mvnw.cmd
