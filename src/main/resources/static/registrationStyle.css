@@ -1,0 +1,35 @@
+body {
+    background-color: #61B7CF;
+}
+
+.regForm {
+    background-color: white;
+    border-color: black;
+    border-width: 5px;
+    border-style: dashed;
+    text-align: center;
+    margin: 10% 25%;
+}
+
+p.registration {
+    color: black;
+    font-family: "Century Gothic", serif;
+    font-size: 25pt;
+    font-weight: bold;
+}
+
+p {
+    color: black;
+    font-family: "Century Gothic", serif;
+    font-size: 20pt;
+}
+
+input {
+    font-family: "Century Gothic", serif;
+    font-size: 20pt;
+}
+
+button {
+    font-family: "Century Gothic", serif;
+    font-size: 20pt;
+}
