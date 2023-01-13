@@ -36,10 +36,8 @@ public class RegistrationService {
     public boolean registerUser(User user) {
         if (isEmailCorrect(user.getEmail()) && isPasswordCorrect(user.getPassword())) {
             userRepository.createUser(user);
-            System.out.println("user register");
             return true;
         }
-        System.out.println("user dont register");
         return false;
     }
 
