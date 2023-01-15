@@ -11,9 +11,10 @@ import java.util.List;
 @Repository
 public class UserRepositoryImpl implements UserRepository {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
-    private final String SQL_FIND_USER = "SELECT * FROM users WHERE id = ?";
+    private final String SQL_FIND_USER_ID = "SELECT * FROM users WHERE id = ?";
+    private final String SQL_FIND_USER_LOGIN = "SELECT * FROM users WHERE login = ?";
     private final String SQL_FIND_ALL = "SELECT * FROM users";
     private final String SQL_DELETE_USER = "DELETE * FROM users WHERE id = ?";
     private final String SQL_UPDATE_USER = "UPDATE users SET login = ? password = ? email = ? WHERE id = ?";
@@ -30,7 +31,12 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User getUserById(Long id) {
-        return jdbcTemplate.queryForObject(SQL_FIND_USER, new UserMapper(), id);
+        return jdbcTemplate.queryForObject(SQL_FIND_USER_ID, new UserMapper(), id);
+    }
+
+    @Override
+    public User getUserByLogin(String login) {
+        return jdbcTemplate.queryForObject(SQL_FIND_USER_LOGIN, new UserMapper(), login);
     }
 
     @Override

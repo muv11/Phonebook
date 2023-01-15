@@ -12,6 +12,7 @@ public interface UserRepository {
     boolean createUser(User user);
     //read
     User getUserById(Long id);
+    User getUserByLogin(String login);
     //update
     boolean updateUser(User user);
     //delete
