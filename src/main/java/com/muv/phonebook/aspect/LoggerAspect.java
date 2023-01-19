@@ -15,17 +15,25 @@ public class LoggerAspect {
 
     @Pointcut("execution(* com.muv.phonebook.controller.*.get*())")
     public void controllerGetPointcut() {}
-    @Pointcut("execution(* com.muv.phonebook.controller.*.post*())")
+    @Pointcut("execution(* com.muv.phonebook.controller.*.post*(..))")
     public void controllerPostPointcut() {}
+    @Pointcut("execution(* com.muv.phonebook.controller.*.redirect*())")
+    public void controllerRedirectPointcut() {}
 
     @Before("controllerGetPointcut()")
-    public void enterGetMappingMethods() {
+    public void enterGetMethods() {
         logger.info("ENTERING GetMapping METHOD");
     }
 
     @Before("controllerPostPointcut()")
-    public void enterPostMappingMethods() {
+    public void enterPostMethods() {
         logger.info("ENTERING PostMapping METHOD");
     }
+
+    @Before("controllerRedirectPointcut()")
+    public void enterRedirectMethods() {
+        logger.info("ENTERING Redirect METHOD");
+    }
+
 
 }
