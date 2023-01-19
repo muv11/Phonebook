@@ -15,16 +15,6 @@ public class AuthorizationService {
 
     public boolean isUserCorrect(String login, String password) {
         User user = userRepository.getUserByLogin(login);
-        if (user.getLogin().equals(login)) {
-            System.out.println("login correct");
-        } else {
-            System.out.println("login incorrect");
-        }
-        if (user.getPassword().equals(password)) {
-            System.out.println("pw correct");
-        } else {
-            System.out.println("pw incorrect");
-        }
         return user.getLogin().equals(login) && user.getPassword().equals(password);
     }
 
