@@ -2,6 +2,7 @@ package com.muv.phonebook.repository;
 
 import com.muv.phonebook.model.User;
 import com.muv.phonebook.model.UserMapper;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -36,7 +37,13 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User getUserByLogin(String login) {
-        return jdbcTemplate.queryForObject(SQL_FIND_USER_LOGIN, new UserMapper(), login);
+        //return jdbcTemplate.queryForObject(SQL_FIND_USER_LOGIN, new UserMapper(), login);
+        try {
+            System.out.println(login);
+            return jdbcTemplate.queryForObject(SQL_FIND_USER_LOGIN, new UserMapper(), login);
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
     }
 
     @Override
