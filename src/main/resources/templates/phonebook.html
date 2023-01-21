@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <link href="/static/registrationStyle.css" th:href="@{/static/registrationStyle.css}" type="text/css" rel="stylesheet">
+        <link href="/static/phonebookStyle.css" th:href="@{/static/phonebookStyle.css}" type="text/css" rel="stylesheet">
         <meta charset="UTF-8">
         <title>Phonebook</title>
     </head>
     <body>
-        <p>PHONEBOOK</p>
+    <form action="/phonebook" method="POST" id="form">
+        <div class="phonebookForm">
+            <p class="phonebook">Телефонный справочник</p>
+
+            <button class="settings" type="submit" name="settings" formmethod="get" formaction="/settings">Настройки</button>
+            <button class="add" type="submit" name="add" formmethod="get" formaction="/add-new-person">Добавить</button>
+
+        </div>
+    </form>
     </body>
 </html>
