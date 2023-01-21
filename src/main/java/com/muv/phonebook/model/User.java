@@ -1,7 +1,10 @@
 package com.muv.phonebook.model;
 
+import org.springframework.data.annotation.Id;
+
 public class User {
 
+    @Id
     private Long id;
     private String login;
     private String password;
