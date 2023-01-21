@@ -1,7 +1,7 @@
 package com.muv.phonebook.service;
 
 import com.muv.phonebook.model.User;
-import com.muv.phonebook.repository.UserRepositoryImpl;
+import com.muv.phonebook.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.regex.Pattern;
@@ -9,9 +9,9 @@ import java.util.regex.Pattern;
 @Service
 public class RegistrationService {
 
-    private final UserRepositoryImpl userRepository;
+    private final UserRepository userRepository;
 
-    public RegistrationService(UserRepositoryImpl userRepository) {
+    public RegistrationService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
