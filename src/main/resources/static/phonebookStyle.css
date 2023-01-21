@@ -1,0 +1,44 @@
+body {
+    background-color: #61B7CF;
+}
+
+.phonebookForm {
+    background-color: white;
+    border-color: black;
+    border-width: 5px;
+    border-style: dashed;
+    text-align: center;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+
+p.phonebook {
+    color: black;
+    font-family: "Century Gothic", serif;
+    font-size: 25pt;
+    font-weight: bold;
+}
+
+p {
+    color: black;
+    font-family: "Century Gothic", serif;
+    font-size: 20pt;
+}
+
+button {
+    font-family: "Century Gothic", serif;
+    font-size: 20pt;
+    position: absolute;
+    width: 170px;
+}
+
+button.settings {
+    top: 2%;
+    right: 15%;
+}
+
+button.add {
+    top: 7%;
+    right: 15%;
+}
