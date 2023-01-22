@@ -10,6 +10,8 @@
         <div class="authForm">
             <p class="authorization">Авторизация</p>
 
+            <span th:if="${error}" th:text="${error}">Error</span>
+
             <p>Логин:</p>
             <label for="login"></label>
             <input type="text" id="login" name="login" placeholder="Login">
