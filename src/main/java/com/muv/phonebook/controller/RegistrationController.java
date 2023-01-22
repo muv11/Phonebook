@@ -3,6 +3,7 @@ package com.muv.phonebook.controller;
 import com.muv.phonebook.model.User;
 import com.muv.phonebook.service.RegistrationService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,13 +26,15 @@ public class RegistrationController {
     public String postRegistration(
             @RequestParam String login,
             @RequestParam String password,
-            @RequestParam String email
+            @RequestParam String email,
+            Model model
     ) {
         User user = new User(login, password, email);
         if (registrationService.registerUser(user)) {
             return "authorization";
         }
-        return "errors/registrationError";
+        model.addAttribute("error", "Неверно заполнены поля. Заполните еще раз");
+        return "registration";
     }
 
 }
