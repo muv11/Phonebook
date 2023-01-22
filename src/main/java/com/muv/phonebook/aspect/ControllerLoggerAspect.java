@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-public class LoggerAspect {
+public class ControllerLoggerAspect {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -17,6 +17,10 @@ public class LoggerAspect {
     public void controllerGetPointcut() {}
     @Pointcut("execution(* com.muv.phonebook.controller.*.post*(..))")
     public void controllerPostPointcut() {}
+    @Pointcut("execution(* com.muv.phonebook.controller.*.put*(..))")
+    public void controllerPutPointcut() {}
+    @Pointcut("execution(* com.muv.phonebook.controller.*.delete*(..))")
+    public void controllerDeletePointcut() {}
     @Pointcut("execution(* com.muv.phonebook.controller.*.redirect*())")
     public void controllerRedirectPointcut() {}
 
@@ -30,10 +34,19 @@ public class LoggerAspect {
         logger.info("ENTERING PostMapping METHOD");
     }
 
+    @Before("controllerPutPointcut()")
+    public void enterPutMethods() {
+        logger.info("ENTERING PutMapping METHOD");
+    }
+
+    @Before("controllerDeletePointcut()")
+    public void enterDeleteMethods() {
+        logger.info("ENTERING DeleteMapping METHOD");
+    }
+
     @Before("controllerRedirectPointcut()")
     public void enterRedirectMethods() {
         logger.info("ENTERING Redirect METHOD");
     }
-
 
 }
