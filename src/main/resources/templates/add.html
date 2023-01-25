@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link href="/static/phonebookStyle.css" th:href="@{/static/phonebookStyle.css}" type="text/css" rel="stylesheet">
+    <link href="/static/add_changeStyle.css" th:href="@{/static/add_changeStyle.css}" type="text/css" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Add contact</title>
 </head>
 <body>
 <form action="/add" method="POST" id="form">
-    <div class="addForm">
-        <p class="add">Добавить контакт</p>
+    <div class="addChangeForm">
+        <p class="addChange">Добавить контакт</p>
 
+        <p>Фамилия:</p>
+        <label for="lastname"></label>
+        <input type="text" id="lastname" name="lastname">
 
+        <p>Имя:</p>
+        <label for="name"></label>
+        <input type="text" id="name" name="name">
+
+        <p>Отчество:</p>
+        <label for="fathersname"></label>
+        <input type="text" id="fathersname" name="fathersname">
+
+        <p>Телефон:</p>
+        <label for="phonenumber"></label>
+        <input type="tel" id="phonenumber" name="phonenumber">
+
+        <p>Город:</p>
+        <label for="city"></label>
+        <input type="text" id="city" name="city">
+
+        <p>Адрес:</p> <!-- Улица, дом, квартира -->
+        <label for="address"></label>
+        <input type="text" id="address" name="address">
+
+        <p>Email:</p>
+        <label for="email"></label>
+        <input type="email" id="email" name="email">
+
+        <br>
+        <br>
+        <button type="submit" name="add">Добавить</button>
+        <br>
+        <br>
 
     </div>
 </form>
