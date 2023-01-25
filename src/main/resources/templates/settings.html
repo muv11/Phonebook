@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link href="/static/phonebookStyle.css" th:href="@{/static/phonebookStyle.css}" type="text/css" rel="stylesheet">
+    <link href="/static/settingsStyle.css" th:href="@{/static/settingsStyle.css}" type="text/css" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Settings</title>
 </head>
 <body>
 <form action="/settings" method="POST" id="form">
     <div class="settingsForm">
-        <p class="settings">Настройки</p>
+        <p class="settings">Настройки аккаунта</p>
 
+        <p>Логин:</p>
+        <label for="login"></label>
+        <input type="text" id="login" name="login">
 
+        <p>Пароль:</p>
+        <label for="password"></label>
+        <input type="text" id="password" name="password">
+
+        <p>Email:</p>
+        <label for="email"></label>
+        <input type="email" id="email" name="email">
+
+        <br>
+        <br>
+        <button type="submit" name="set">Применить</button>
+        <br>
+        <br>
 
     </div>
 </form>
