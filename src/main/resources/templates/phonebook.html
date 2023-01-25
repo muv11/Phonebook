@@ -10,8 +10,21 @@
         <div class="phonebookForm">
             <p class="phonebook">Телефонный справочник</p>
 
-            <button class="settings" type="submit" name="settings" formmethod="get" formaction="/settings">Настройки</button>
-            <button class="add" type="submit" name="add" formmethod="get" formaction="/add-new-person">Добавить</button>
+            <button class="settings" type="submit" name="settings" formmethod="get" formaction="/redirectToSettings">Настройки</button>
+            <button class="add" type="submit" name="add" formmethod="get" formaction="/redirectToAdd">Добавить</button>
+
+            <table>
+                <tr>
+                    <th>ФИО</th>
+                    <th>Номер</th>
+                    <th>Адрес</th>
+                    <th>Email</th>
+                    <th>-</th>
+                </tr>
+            </table>
+
+
+            <button class="change" type="submit" name="change" formmethod="get" formaction="/redirectToChange">Изменить</button>
 
         </div>
     </form>
