@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link href="/static/phonebookStyle.css" th:href="@{/static/phonebookStyle.css}" type="text/css" rel="stylesheet">
+    <link href="/static/add_changeStyle.css" th:href="@{/static/add_changeStyle.css}" type="text/css" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Change</title>
 </head>
 <body>
 <form action="/change" method="POST" id="form">
-    <div class="changeForm">
-        <p class="change">Изменить данные контакта</p>
+    <div class="addChangeForm">
+        <p class="addChange">Изменить данные контакта</p>
 
+        <p>Фамилия:</p>
+        <label for="lastname"></label>
+        <input type="text" id="lastname" name="lastname">
 
+        <p>Имя:</p>
+        <label for="name"></label>
+        <input type="text" id="name" name="name">
+
+        <p>Отчество:</p>
+        <label for="fathersname"></label>
+        <input type="text" id="fathersname" name="fathersname">
+
+        <p>Телефон:</p>
+        <label for="phonenumber"></label>
+        <input type="tel" id="phonenumber" name="phonenumber">
+
+        <p>Город:</p>
+        <label for="city"></label>
+        <input type="text" id="city" name="city">
+
+        <p>Адрес:</p> <!-- Улица, дом, квартира -->
+        <label for="address"></label>
+        <input type="text" id="address" name="address">
+
+        <p>Email:</p>
+        <label for="email"></label>
+        <input type="email" id="email" name="email">
+
+        <br>
+        <br>
+        <button type="submit" name="add">Изменить</button>
+        <button type="submit" name="delete">Удалить</button>
+        <br>
+        <br>
 
     </div>
 </form>
