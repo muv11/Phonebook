@@ -9,6 +9,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * This is repository class that works with contacts table of phonebook database
+ * @author muv11
+ * @version 1.1 */
 @Repository
 public class ContactRepository {
 
@@ -18,6 +22,9 @@ public class ContactRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    /**
+     * Creates new contact in the contacts table
+     * @param contact the contacts to be stored in the database */
     public void createContact(Contact contact) {
         String sql = "INSERT INTO contacts (last_name, name, fathers_name, phone_number, city, street, house_number, flat_number, email) " +
                 "VALUES (:last_name, :name, :fathers_name, :phone_number, :city, :street, :house_number, :flat_number, :email)";
@@ -31,21 +38,33 @@ public class ContactRepository {
                 .addValue("house_number", contact.getHouseNumber())
                 .addValue("flat_number", contact.getFlatNumber())
                 .addValue("email", contact.getEmail());
-        jdbcTemplate.queryForObject(sql, parameterSource, new ContactMapper());
+        jdbcTemplate.update(sql, parameterSource);
     }
 
+    /**
+     * Finds contact by its id
+     * @param id the id of the contact to be found
+     * @return found contact*/
     public Contact findById(Long id) {
         String sql = "SELECT * FROM contacts WHERE id = :id";
         SqlParameterSource parameterSource = new MapSqlParameterSource("id", id);
         return jdbcTemplate.queryForObject(sql, parameterSource, new ContactMapper());
     }
 
+    /**
+     * Finds contacts by their user id (FK)
+     * @param idUser the user's id (FK)
+     * @return list of contacts */
     public List<Contact> findAllByUserId(Long idUser) {
         String sql = "SELECT * FROM contacts WHERE id_user = :idUser";
         SqlParameterSource parameterSource = new MapSqlParameterSource("id_user", idUser);
         return jdbcTemplate.query(sql, parameterSource, new ContactMapper());
     }
 
+    /**
+     * Updates contact in the contacts table
+     * @param contact the contact with updated fields
+     * @param id the id of the contact to be updated */
     public void updateContact(Contact contact, Long id) {
         String sql = "UPDATE contacts SET last_name = :last_name, name = :name, fathers_name = :fathers_name, phone_number = :phone_number, " +
                 "city = :city, street = :street, house_number = :house_number, flat_number = :flat_number, email = :email WHERE id = :id";
@@ -62,6 +81,9 @@ public class ContactRepository {
         jdbcTemplate.update(sql, parameterSource);
     }
 
+    /**
+     * Deletes contact in the contacts table
+     * @param id the id of the contact to be deleted */
     public void deleteContact(Long id) {
         String sql = "DELETE FROM contacts WHERE id = :id";
         SqlParameterSource parameterSource = new MapSqlParameterSource("id", id);
