@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * This is controller class that works with registration requests
+ * @author muv11
+ * @version 1.1 */
 @Controller
 public class RegistrationController {
 
