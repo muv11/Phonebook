@@ -7,6 +7,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+/**
+ * This is aspect that processes methods of controller classes
+ * @author muv11
+ * @version 1.0
+ * @see com.muv.phonebook.controller */
 @Component
 @Aspect
 public class ControllerLoggerAspect {
