@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * This is controller class that works with authorization requests
+ * @author muv11
+ * @version 1.2 */
 @Controller
 public class AuthorizationController {
 

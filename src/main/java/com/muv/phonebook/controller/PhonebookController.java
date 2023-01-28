@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
+/**
+ * This is controller class that works with the requests of the main app's page
+ * @author muv11
+ * @version 1.2 */
 @Controller
 public class PhonebookController {
 
