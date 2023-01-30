@@ -2,30 +2,31 @@
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link href="/static/authorizationStyle.css" th:href="@{/static/authorizationStyle.css}" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap" rel="stylesheet" />
     <meta charset="UTF-8">
     <title>Authorization</title>
 </head>
 <body>
     <form action="/" method="POST" id="form">
-        <div class="authForm">
-            <p class="authorization">Авторизация</p>
-
+        <div class="authPage">
+            <div class="headForm">
+                <p class="authorization">Авторизация</p>
+            </div>
             <span th:if="${error}" th:text="${error}">Error</span>
+            <div class="authForm">
+                <label for="login"></label>
+                <input class="login" type="text" id="login" name="login" placeholder="Login">
 
-            <p>Логин:</p>
-            <label for="login"></label>
-            <input type="text" id="login" name="login" placeholder="Login">
+                <label for="password"></label>
+                <input class="password" type="password" id="password" name="password" placeholder="Password">
 
-            <p>Пароль:</p>
-            <label for="password"></label>
-            <input type="password" id="password" name="password" placeholder="Password">
-
-            <br>
-            <br>
-            <button type="submit" name="login">Вход</button>
-            <button type="submit" name="registration" formmethod="get" formaction="/redirectToRegistration">Регистрация</button>
-            <br>
-            <br>
+                <br>
+                <br>
+                <button class="login" type="submit" name="login">Вход</button>
+                <button class="registration" type="submit" name="registration" formmethod="get" formaction="/redirectToRegistration">Регистрация</button>
+                <br>
+                <br>
+            </div>
         </div>
     </form>
 </body>
