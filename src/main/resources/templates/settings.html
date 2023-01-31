@@ -16,15 +16,15 @@
         <div class="settingsForm">
             <p class="login">Логин:</p>
             <label for="login"></label>
-            <input class="login" type="text" id="login" name="login">
+            <input class="login" type="text" id="login" name="login" th:value="${login}">
 
             <p class="password">Пароль:</p>
             <label for="password"></label>
-            <input class="password" type="text" id="password" name="password">
+            <input class="password" type="text" id="password" name="password" th:value="${password}">
 
             <p class="email">Email:</p>
             <label for="email"></label>
-            <input class="email" type="email" id="email" name="email">
+            <input class="email" type="email" id="email" name="email" th:value="${email}">
 
             <br>
             <br>
