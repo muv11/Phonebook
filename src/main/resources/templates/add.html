@@ -2,48 +2,59 @@
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link href="/static/add_changeStyle.css" th:href="@{/static/add_changeStyle.css}" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap" rel="stylesheet" />
     <meta charset="UTF-8">
     <title>Add contact</title>
 </head>
 <body>
 <form action="/add" method="POST" id="form">
-    <div class="addChangeForm">
-        <p class="addChange">Добавить контакт</p>
+    <div class="addChangePage">
+        <div class="headForm">
+            <p class="add">Добавить контакт</p>
+        </div>
+        <div class="addForm">
+            <p class="lastName">Фамилия:</p>
+            <label for="lastName"></label>
+            <input class="lastName" type="text" id="lastName" name="lastName">
 
-        <p>Фамилия:</p>
-        <label for="lastname"></label>
-        <input type="text" id="lastname" name="lastname">
+            <p class="name">Имя:</p>
+            <label for="name"></label>
+            <input class="name" type="text" id="name" name="name">
 
-        <p>Имя:</p>
-        <label for="name"></label>
-        <input type="text" id="name" name="name">
+            <p class="fathersName">Отчество:</p>
+            <label for="fathersName"></label>
+            <input class="fathersName" type="text" id="fathersName" name="fathersName">
 
-        <p>Отчество:</p>
-        <label for="fathersname"></label>
-        <input type="text" id="fathersname" name="fathersname">
+            <p class="phoneNumber">Телефон:</p>
+            <label for="phoneNumber"></label>
+            <input class="phoneNumber" type="tel" id="phoneNumber" name="phoneNumber">
 
-        <p>Телефон:</p>
-        <label for="phonenumber"></label>
-        <input type="tel" id="phonenumber" name="phonenumber">
+            <p class="city">Город:</p>
+            <label for="city"></label>
+            <input class="city" type="text" id="city" name="city">
 
-        <p>Город:</p>
-        <label for="city"></label>
-        <input type="text" id="city" name="city">
+            <p class="street">Улица:</p>
+            <label for="street"></label>
+            <input class="street" type="text" id="street" name="street">
 
-        <p>Адрес:</p> <!-- Улица, дом, квартира -->
-        <label for="address"></label>
-        <input type="text" id="address" name="address">
+            <p class="houseNumber">Дом:</p>
+            <label for="houseNumber"></label>
+            <input class="houseNumber" type="text" id="houseNumber" name="houseNumber">
 
-        <p>Email:</p>
-        <label for="email"></label>
-        <input type="email" id="email" name="email">
+            <p class="flatNumber">Квартира:</p>
+            <label for="flatNumber"></label>
+            <input class="flatNumber" type="text" id="flatNumber" name="flatNumber">
 
-        <br>
-        <br>
-        <button type="submit" name="add">Добавить</button>
-        <br>
-        <br>
+            <p class="email">Email:</p>
+            <label for="email"></label>
+            <input class="email" type="email" id="email" name="email">
 
+            <br>
+            <br>
+            <button class="add" type="submit" name="add">Добавить</button>
+            <br>
+            <br>
+        </div>
     </div>
 </form>
 </body>
