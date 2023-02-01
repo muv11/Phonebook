@@ -2,14 +2,16 @@
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
     <head>
         <link href="/static/phonebookStyle.css" th:href="@{/static/phonebookStyle.css}" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap" rel="stylesheet" />
         <meta charset="UTF-8">
         <title>Phonebook</title>
     </head>
     <body>
     <form action="/phonebook" method="POST" id="form">
-        <div class="phonebookForm">
-            <p class="phonebook">Телефонный справочник</p>
-
+        <div class="phonebookPage">
+            <div class="headForm">
+                <p class="phonebook">Телефонный справочник</p>
+            </div>
             <button class="settings" type="submit" name="settings" formmethod="get" formaction="/redirectToSettings">Настройки</button>
             <button class="add" type="submit" name="add" formmethod="get" formaction="/redirectToAdd">Добавить</button>
 
@@ -21,11 +23,16 @@
                     <th>Email</th>
                     <th>-</th>
                 </tr>
+                <tr th:each="contacts : ${contactsList}">
+                    <td th:text="${contacts.getLastName() + contacts.getName()}">ФИО</td>
+                    <td th:text="${contacts.getPhoneNumber()}">Номер</td>
+                    <td th:text="${contacts.getCity() + contacts.getStreet()}">Адрес</td>
+                    <td th:text="${contacts.getEmail()}">Email</td>
+                    <td class="tdbutton">
+                        <button class="change" type="submit" name="change" formmethod="get" formaction="/redirectToChange">Изменить</button>
+                    </td>
+                </tr>
             </table>
-
-
-            <button class="change" type="submit" name="change" formmethod="get" formaction="/redirectToChange">Изменить</button>
-
         </div>
     </form>
     </body>

@@ -1,44 +1,80 @@
-body {
-    background-color: #61B7CF;
+.phonebookPage {
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,1);
+    position: relative;
 }
-
-.phonebookForm {
-    background-color: white;
-    border-color: black;
-    border-width: 5px;
-    border-style: dashed;
-    text-align: center;
-    width: 80%;
-    height: 80%;
-    margin: auto;
+.headForm {
+    width: 100%;
+    height: 65px;
+    background: rgba(217,217,217,0.27);
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 p.phonebook {
-    color: black;
-    font-family: "Century Gothic", serif;
-    font-size: 25pt;
-    font-weight: bold;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    font-family: JetBrains Mono, serif;
+    font-weight: Bold;
+    font-size: 38px;
+    margin-top: 5px;
+    padding-left: 700px;
 }
 
 p {
-    color: black;
-    font-family: "Century Gothic", serif;
-    font-size: 20pt;
+    font-family: JetBrains Mono, serif;
+    font-size: 25pt;
+    font-weight: lighter;
 }
 
 button {
-    font-family: "Century Gothic", serif;
-    font-size: 20pt;
     position: absolute;
-    width: 170px;
+    background: rgba(255,255,255,1);;
+    font-family: JetBrains Mono, serif;
+    font-weight: Normal;
+    border: 2px solid rgba(0,0,0,1);
+    width: 200px;
+    border-radius: 6px;
+}
+
+button.change {
+    height: 40px;
+    font-size: 20pt;
+    margin-left: -100px;
+    margin-top: -20px;
 }
 
 button.settings {
-    top: 2%;
-    right: 15%;
+    height: 60px;
+    font-size: 25pt;
+    margin-left: 950px;
+    margin-top: -100px;
 }
 
 button.add {
-    top: 7%;
-    right: 15%;
+    height: 60px;
+    font-size: 25pt;
+    margin-left: 700px;
+    margin-top: -100px;
+}
+
+table {
+    font-family: JetBrains Mono, serif;
+    font-size: 25pt;
+    font-weight: lighter;
+    border: 1px solid rgba(0,0,0,0.8);
+    margin-top: 200px;
+    margin-left: 200px;
+}
+
+td, th {
+    width: 300px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.8);
+}
+
+.tdbutton {
 }
