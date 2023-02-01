@@ -65,6 +65,9 @@ input {
     position: absolute;
     color: rgba(0,0,0,0.5);
     background: rgba(255,255,255,1);
+    font-family: JetBrains Mono, serif;
+    font-size: 25pt;
+    font-weight: Normal;
     height: 80px;
     width: 550px;
     border: 2px solid rgba(0,0,0,0.5);
