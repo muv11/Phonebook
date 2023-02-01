@@ -26,8 +26,8 @@ public class ContactRepository {
      * Creates new contact in the contacts table
      * @param contact the contacts to be stored in the database */
     public void createContact(Contact contact) {
-        String sql = "INSERT INTO contacts (last_name, name, fathers_name, phone_number, city, street, house_number, flat_number, email) " +
-                "VALUES (:last_name, :name, :fathers_name, :phone_number, :city, :street, :house_number, :flat_number, :email)";
+        String sql = "INSERT INTO contacts (last_name, name, fathers_name, phone_number, city, street, house_number, flat_number, email, id_user) " +
+                "VALUES (:last_name, :name, :fathers_name, :phone_number, :city, :street, :house_number, :flat_number, :email, :id_user)";
         SqlParameterSource parameterSource = new MapSqlParameterSource()
                 .addValue("last_name", contact.getLastName())
                 .addValue("name", contact.getName())
@@ -37,7 +37,8 @@ public class ContactRepository {
                 .addValue("street", contact.getStreet())
                 .addValue("house_number", contact.getHouseNumber())
                 .addValue("flat_number", contact.getFlatNumber())
-                .addValue("email", contact.getEmail());
+                .addValue("email", contact.getEmail())
+                .addValue("id_user", contact.getIdUser());
         jdbcTemplate.update(sql, parameterSource);
     }
 
@@ -56,7 +57,7 @@ public class ContactRepository {
      * @param idUser the user's id (FK)
      * @return list of contacts */
     public List<Contact> findAllByUserId(Long idUser) {
-        String sql = "SELECT * FROM contacts WHERE id_user = :idUser";
+        String sql = "SELECT * FROM contacts WHERE id_user = :id_user";
         SqlParameterSource parameterSource = new MapSqlParameterSource("id_user", idUser);
         return jdbcTemplate.query(sql, parameterSource, new ContactMapper());
     }
