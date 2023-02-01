@@ -20,7 +20,7 @@ public class RegistrationService {
      * (?=.*[a-z]) a lower case alphabet must occur at least once
      * (?=.*[A-Z]) an upper case alphabet that must occur at least once
      * .{8, 20} at least 8 characters and at most 20 characters */
-    public boolean isPasswordCorrect(String password) {
+    protected boolean isPasswordCorrect(String password) {
         String regexPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,20}$";
         return Pattern.compile(regexPattern).matcher(password).matches();
     }
@@ -28,7 +28,7 @@ public class RegistrationService {
     /**
      *(.+)@(\S+) a @ must occur
      * .{5, 35} at least 5 characters and at most 35 characters */
-    public boolean isEmailCorrect(String email) {
+    protected boolean isEmailCorrect(String email) {
         String regexPattern = "^(.+)@(\\S+).{5,35}$";
         return Pattern.compile(regexPattern).matcher(email).matches();
     }
