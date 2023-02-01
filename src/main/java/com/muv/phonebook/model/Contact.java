@@ -19,7 +19,7 @@ public class Contact {
 
     public Contact() {}
 
-    public Contact(String lastName, String name, String fathersName, String phoneNumber, String city, String street, String houseNumber, String flatNumber, String email, Long idUser) {
+    public Contact(String lastName, String name, String fathersName, String phoneNumber, String city, String street, String houseNumber, String flatNumber, String email) {
         this.lastName = lastName;
         this.name = name;
         this.fathersName = fathersName;
@@ -29,7 +29,6 @@ public class Contact {
         this.houseNumber = houseNumber;
         this.flatNumber = flatNumber;
         this.email = email;
-        this.idUser = idUser;
     }
 
     public Long getId() {
