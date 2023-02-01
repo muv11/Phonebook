@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * This is repository class that works with users table of phonebook database
  * @author muv11
- * @version 2.1 */
+ * @version 2.2 */
 
 @Repository
 public class UserRepository {
@@ -70,6 +70,7 @@ public class UserRepository {
     public void updateUser(User user, Long id) {
         String sql = "UPDATE users SET login = :login, password = :password, email = :email WHERE id = :id";
         SqlParameterSource parameterSource = new MapSqlParameterSource()
+                .addValue("id", id)
                 .addValue("login", user.getLogin())
                 .addValue("password", user.getPassword())
                 .addValue("email", user.getEmail());
