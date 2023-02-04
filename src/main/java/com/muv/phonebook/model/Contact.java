@@ -118,4 +118,21 @@ public class Contact {
     public void setIdUser(Long idUser) {
         this.idUser = idUser;
     }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "id=" + id +
+                ", lastName='" + lastName + '\'' +
+                ", name='" + name + '\'' +
+                ", fathersName='" + fathersName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", houseNumber='" + houseNumber + '\'' +
+                ", flatNumber='" + flatNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", idUser=" + idUser +
+                '}';
+    }
 }
