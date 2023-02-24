@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * This is aspect that processes methods of controller classes
  * @author muv11
- * @version 1.0
+ * @version 1.1
  * @see com.muv.phonebook.controller */
 @Component
 @Aspect
@@ -18,7 +18,7 @@ public class ControllerLoggerAspect {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("execution(* com.muv.phonebook.controller.*.get*())")
+    @Pointcut("execution(* com.muv.phonebook.controller.*.get*(..))")
     public void controllerGetPointcut() {}
     @Pointcut("execution(* com.muv.phonebook.controller.*.post*(..))")
     public void controllerPostPointcut() {}
