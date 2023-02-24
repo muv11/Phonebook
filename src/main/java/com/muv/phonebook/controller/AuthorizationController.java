@@ -11,14 +11,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * This is controller class that works with authorization requests
  * @author muv11
- * @version 1.2 */
+ * @version 1.3 */
 @Controller
 public class AuthorizationController {
 
     private final AuthorizationService authorizationService;
+    private final PhonebookController phonebookController;
 
-    public AuthorizationController(AuthorizationService authorizationService) {
+    public AuthorizationController(AuthorizationService authorizationService, PhonebookController phonebookController) {
         this.authorizationService = authorizationService;
+        this.phonebookController = phonebookController;
     }
 
     @GetMapping("/")
@@ -39,7 +41,7 @@ public class AuthorizationController {
     ) {
         try {
             if (authorizationService.isUserCorrect(login, password)) {
-                return "phonebook";
+                return phonebookController.getPhonebook(model);
             }
             model.addAttribute("error", "Пользователя с таким логином и паролем не существует");
             return "authorization";
