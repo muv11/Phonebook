@@ -12,16 +12,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * This is controller class that works with user data modification requests
  * @author muv11
- * @version 2.0 */
+ * @version 2.1 */
 @Controller
 public class SettingsController {
 
     private final SettingsService settingsService;
     private final LoggedUserManagementService userManagementService;
+    private final PhonebookController phonebookController;
 
-    public SettingsController(SettingsService settingsService, LoggedUserManagementService userManagementService) {
+    public SettingsController(SettingsService settingsService, LoggedUserManagementService userManagementService, PhonebookController phonebookController) {
         this.settingsService = settingsService;
         this.userManagementService = userManagementService;
+        this.phonebookController = phonebookController;
     }
 
     @GetMapping("/settings")
@@ -43,7 +45,7 @@ public class SettingsController {
             Model model
     ) {
         if (settingsService.updateUser(new User(login, password, email))) {
-            return "phonebook";
+            return phonebookController.getPhonebook(model);
         }
         model.addAttribute("error", "Неверно заполнены поля. Заполните еще раз");
         return "settings";
