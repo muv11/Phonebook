@@ -10,4 +10,4 @@
 * CSS
 * Thymeleaf
 * Log4j
-* Junit 5
+* JUnit 5
