@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * This is repository class that works with contacts table of phonebook database
  * @author muv11
- * @version 1.1 */
+ * @version 1.2 */
 @Repository
 public class ContactRepository {
 
@@ -70,6 +70,7 @@ public class ContactRepository {
         String sql = "UPDATE contacts SET last_name = :last_name, name = :name, fathers_name = :fathers_name, phone_number = :phone_number, " +
                 "city = :city, street = :street, house_number = :house_number, flat_number = :flat_number, email = :email WHERE id = :id";
         SqlParameterSource parameterSource = new MapSqlParameterSource()
+                .addValue("id", id)
                 .addValue("last_name", contact.getLastName())
                 .addValue("name", contact.getName())
                 .addValue("fathers_name", contact.getFathersName())
