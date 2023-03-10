@@ -7,7 +7,7 @@
     <title>Change</title>
 </head>
 <body>
-<form action="/change" method="POST" id="form">
+<form action="/change" method="GET" id="form">
     <div class="addChangePage">
         <div class="headForm">
             <p class="change">Изменить данные контакта</p>
@@ -15,44 +15,44 @@
         <div class="changeForm">
             <p class="lastName">Фамилия:</p>
             <label for="lastName"></label>
-            <input class="lastName" type="text" id="lastName" name="lastName">
+            <input class="lastName" type="text" id="lastName" name="lastName" th:value="${lastName}">
 
             <p class="name">Имя:</p>
             <label for="name"></label>
-            <input class="name" type="text" id="name" name="name">
+            <input class="name" type="text" id="name" name="name" th:value="${name}">
 
             <p class="fathersName">Отчество:</p>
             <label for="fathersName"></label>
-            <input class="fathersName" type="text" id="fathersName" name="fathersName">
+            <input class="fathersName" type="text" id="fathersName" name="fathersName" th:value="${fathersName}">
 
             <p class="phoneNumber">Телефон:</p>
             <label for="phoneNumber"></label>
-            <input class="phoneNumber" type="tel" id="phoneNumber" name="phoneNumber">
+            <input class="phoneNumber" type="tel" id="phoneNumber" name="phoneNumber" th:value="${phoneNumber}">
 
             <p class="city">Город:</p>
             <label for="city"></label>
-            <input class="city" type="text" id="city" name="city">
+            <input class="city" type="text" id="city" name="city" th:value="${city}">
 
             <p class="street">Улица:</p>
             <label for="street"></label>
-            <input class="street" type="text" id="street" name="street">
+            <input class="street" type="text" id="street" name="street" th:value="${street}">
 
             <p class="houseNumber">Дом:</p>
             <label for="houseNumber"></label>
-            <input class="houseNumber" type="text" id="houseNumber" name="houseNumber">
+            <input class="houseNumber" type="text" id="houseNumber" name="houseNumber" th:value="${houseNumber}">
 
             <p class="flatNumber">Квартира:</p>
             <label for="flatNumber"></label>
-            <input class="flatNumber" type="text" id="flatNumber" name="flatNumber">
+            <input class="flatNumber" type="text" id="flatNumber" name="flatNumber" th:value="${flatNumber}">
 
             <p class="email">Email:</p>
             <label for="email"></label>
-            <input class="email" type="email" id="email" name="email">
+            <input class="email" type="email" id="email" name="email" th:value="${email}">
 
             <br>
             <br>
-            <button class="change" type="submit" name="add">Изменить</button>
-            <button class="delete" type="submit" name="add">Удалить</button>
+            <button class="change" type="submit" name="change" th:action="@{/change}" formmethod="post">Изменить</button>
+            <a th:href="@{/change-delete/{id}(id=${id})}">Удалить</a>
             <br>
             <br>
         </div>
