@@ -7,7 +7,7 @@
         <title>Phonebook</title>
     </head>
     <body>
-    <form action="/phonebook" method="POST" id="form">
+    <form action="/phonebook" method="get" id="form">
         <div class="phonebookPage">
             <div class="headForm">
                 <p class="phonebook">Телефонный справочник</p>
@@ -24,12 +24,12 @@
                     <th>-</th>
                 </tr>
                 <tr th:each="contacts : ${contactsList}">
-                    <td th:text="${contacts.getLastName() + contacts.getName()}">ФИО</td>
-                    <td th:text="${contacts.getPhoneNumber()}">Номер</td>
-                    <td th:text="${contacts.getCity() + contacts.getStreet()}">Адрес</td>
+                    <td th:text="${contacts.getLastName()} + ${space} + ${contacts.getName()} + ${space} + ${contacts.getFathersName()}">ФИО</td>
+                    <td th:text="${contacts.getPhoneNumber()}">Номер телефона</td>
+                    <td th:text="${contacts.getCity()} + ${space} + ${contacts.getStreet()} + ${space} + ${contacts.getHouseNumber()} + ${space} + ${contacts.getFlatNumber()}">Адрес</td>
                     <td th:text="${contacts.getEmail()}">Email</td>
-                    <td class="tdbutton">
-                        <button class="change" type="submit" name="change" formmethod="get" formaction="/redirectToChange">Изменить</button>
+                    <td>
+                        <a th:href="@{/change/{id}(id=${contacts.getId()})}">Изменить</a>
                     </td>
                 </tr>
             </table>
