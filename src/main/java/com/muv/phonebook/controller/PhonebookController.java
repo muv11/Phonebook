@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * This is controller class that works with the requests of the main app's page
  * @author muv11
- * @version 1.2 */
+ * @version 1.3 */
 @Controller
 public class PhonebookController {
 
@@ -31,6 +31,7 @@ public class PhonebookController {
         }
         List<Contact> contacts = phonebookService.getContactList(userManagementService.getLogin());
         model.addAttribute("contactsList", contacts);
+        model.addAttribute("space", " ");
         return "phonebook";
     }
 
