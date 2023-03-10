@@ -7,6 +7,10 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 import java.util.Objects;
 
+/**
+ * This is configuration class that sets properties of the data source
+ * @author muv11
+ * @version 1.0 */
 @Configuration
 @ComponentScan(basePackages = "java")
 @PropertySource("classpath:application.properties")
