@@ -63,18 +63,17 @@ button.add {
 
 table {
     font-family: JetBrains Mono, serif;
-    font-size: 25pt;
+    font-size: 18pt;
     font-weight: lighter;
     border: 1px solid rgba(0,0,0,0.8);
     margin-top: 200px;
-    margin-left: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 td, th {
     width: 300px;
     text-align: center;
     border: 1px solid rgba(0,0,0,0.8);
-}
-
-.tdbutton {
 }
