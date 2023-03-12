@@ -52,7 +52,7 @@
             <br>
             <br>
             <button class="change" type="submit" name="change" th:action="@{/change}" formmethod="post">Изменить</button>
-            <a th:href="@{/change-delete/{id}(id=${id})}">Удалить</a>
+            <a class="delete" th:href="@{/change-delete/{id}(id=${id})}">Удалить</a>
             <br>
             <br>
         </div>
