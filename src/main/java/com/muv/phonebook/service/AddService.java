@@ -5,6 +5,10 @@ import com.muv.phonebook.repository.ContactRepository;
 import com.muv.phonebook.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+/**
+ * This is service class that adds new contact
+ * @author muv11
+ * @version 1.0 */
 @Service
 public class AddService {
 

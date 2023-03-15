@@ -7,6 +7,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * This is service class that gets contacts
+ * @author muv11
+ * @version 1.0 */
 @Service
 public class PhonebookService {
 
