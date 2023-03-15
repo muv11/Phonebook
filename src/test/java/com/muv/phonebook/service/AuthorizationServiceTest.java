@@ -13,8 +13,8 @@ class AuthorizationServiceTest {
 
     @Test
     void isUserCorrect() {
-        Assertions.assertTrue(authorizationService.isUserCorrect("newsitelogin", "Pass12345"));
-        Assertions.assertFalse(authorizationService.isUserCorrect("newsitelogin", "passworD5464"));
+        Assertions.assertTrue(authorizationService.isUserCorrect("newsitelogin ", "Pass12345"));
+        Assertions.assertFalse(authorizationService.isUserCorrect("newsitelogin ", "passworD5464"));
     }
 
 
