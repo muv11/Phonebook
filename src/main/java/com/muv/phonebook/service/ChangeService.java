@@ -5,6 +5,10 @@ import com.muv.phonebook.repository.ContactRepository;
 import com.muv.phonebook.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+/**
+ * This is service class that changes data of the contacts and deletes contacts
+ * @author muv11
+ * @version 1.0 */
 @Service
 public class ChangeService {
 

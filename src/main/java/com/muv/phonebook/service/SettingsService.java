@@ -4,6 +4,10 @@ import com.muv.phonebook.model.User;
 import com.muv.phonebook.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+/**
+ * This is service class that changes data of the users
+ * @author muv11
+ * @version 1.0 */
 @Service
 public class SettingsService {
 

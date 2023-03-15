@@ -6,6 +6,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.regex.Pattern;
 
+/**
+ * This is service class that checks the correctness of the registration's data
+ * and register new users
+ * @author muv11
+ * @version 1.0 */
 @Service
 public class RegistrationService {
 
@@ -15,7 +20,7 @@ public class RegistrationService {
         this.userRepository = userRepository;
     }
 
-    /**
+    /*
      * (?=.*[0-9]) a digit must occur at least once
      * (?=.*[a-z]) a lower case alphabet must occur at least once
      * (?=.*[A-Z]) an upper case alphabet that must occur at least once
@@ -25,7 +30,7 @@ public class RegistrationService {
         return Pattern.compile(regexPattern).matcher(password).matches();
     }
 
-    /**
+    /*
      *(.+)@(\S+) a @ must occur
      * .{5, 35} at least 5 characters and at most 35 characters */
     protected boolean isEmailCorrect(String email) {
