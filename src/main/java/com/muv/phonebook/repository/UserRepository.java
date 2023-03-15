@@ -2,6 +2,7 @@ package com.muv.phonebook.repository;
 
 import com.muv.phonebook.model.User;
 import com.muv.phonebook.model.UserMapper;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -42,7 +43,11 @@ public class UserRepository {
     public User findUserById(Long id) {
         String sql = "SELECT * FROM users WHERE users.id = :id";
         SqlParameterSource parameterSource = new MapSqlParameterSource("id", id);
-        return jdbcTemplate.queryForObject(sql, parameterSource, new UserMapper());
+        try {
+            return jdbcTemplate.queryForObject(sql, parameterSource, new UserMapper());
+        } catch (EmptyResultDataAccessException erdae) {
+            return null;
+        }
     }
 
     /**
@@ -52,7 +57,11 @@ public class UserRepository {
     public User findUserByLogin(String login) {
         String sql = "SELECT * FROM users WHERE users.login = :login";
         SqlParameterSource parameterSource = new MapSqlParameterSource("login", login);
-        return jdbcTemplate.queryForObject(sql, parameterSource, new UserMapper());
+        try {
+            return jdbcTemplate.queryForObject(sql, parameterSource, new UserMapper());
+        } catch (EmptyResultDataAccessException erdae) {
+            return null;
+        }
     }
 
     /**
