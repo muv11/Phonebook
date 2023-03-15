@@ -31,6 +31,20 @@ public class Contact {
         this.email = email;
     }
 
+    public Contact(Long id, String lastName, String name, String fathersName, String phoneNumber, String city, String street, String houseNumber, String flatNumber, String email, Long idUser) {
+        this.id = id;
+        this.lastName = lastName;
+        this.name = name;
+        this.fathersName = fathersName;
+        this.phoneNumber = phoneNumber;
+        this.city = city;
+        this.street = street;
+        this.houseNumber = houseNumber;
+        this.flatNumber = flatNumber;
+        this.email = email;
+        this.idUser = idUser;
+    }
+
     public Long getId() {
         return id;
     }
