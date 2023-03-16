@@ -2,6 +2,7 @@ package com.muv.phonebook.repository;
 
 import com.muv.phonebook.model.Contact;
 import com.muv.phonebook.model.ContactMapper;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -49,7 +50,25 @@ public class ContactRepository {
     public Contact findById(Long id) {
         String sql = "SELECT * FROM contacts WHERE id = :id";
         SqlParameterSource parameterSource = new MapSqlParameterSource("id", id);
-        return jdbcTemplate.queryForObject(sql, parameterSource, new ContactMapper());
+        try {
+            return jdbcTemplate.queryForObject(sql, parameterSource, new ContactMapper());
+        } catch (EmptyResultDataAccessException erdae) {
+            return null;
+        }
+    }
+
+    /**
+     * Finds contact by its phone number
+     * @param phoneNumber the phone Number of the contact to be found
+     * @return found contact*/
+    public Contact findByPhoneNumber(String phoneNumber) {
+        String sql = "SELECT * FROM contacts WHERE phone_number = :phone_number";
+        SqlParameterSource parameterSource = new MapSqlParameterSource("phone_number", phoneNumber);
+        try {
+            return jdbcTemplate.queryForObject(sql, parameterSource, new ContactMapper());
+        } catch (EmptyResultDataAccessException erdae) {
+            return null;
+        }
     }
 
     /**
